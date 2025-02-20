@@ -1,16 +1,17 @@
 const mongoose = require("mongoose");
 
-const TaskSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
+const TaskSchema = new mongoose.Schema(
+  {
+    title: { type: String, required: true },
+    completed: { type: Boolean, default: false },
+    priority: {
+      type: String,
+      enum: ["low", "medium", "high"],
+      default: "medium",
+    }, // Added priority field
+    dueDate: { type: Date }, // Added due date field
   },
-  completed: {
-    type: Boolean,
-    default: false,
-  },
-});
+  { timestamps: true } // Adds createdAt & updatedAt fields automatically
+);
 
-// Create and export the model
-const Task = mongoose.model("Task", TaskSchema);
-module.exports = Task;
+module.exports = mongoose.model("Task", TaskSchema);

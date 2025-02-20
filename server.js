@@ -11,10 +11,10 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 5000;
 
-//Middleware Function
+// Middleware Function
 const logRequest = (req, res, next) => {
   console.log(
-    `${new Date().toLocaleString()} Request Made to : ${req.originalUrl}`
+    `${new Date().toLocaleString()} Request Made to: ${req.originalUrl}`
   );
   next(); // Move on to the next phase
 };
@@ -24,12 +24,12 @@ app.get("/", function (req, res) {
   res.send("Welcome to TODO App");
 });
 
-//Import the router files
+// Import the router files
 const taskRoutes = require("./routes/taskRoutes");
 
-//Use the routers
+// Use the routers
 app.use("/task", taskRoutes);
 
-app.listen(5000, () => {
-  console.log("listening on port 5000");
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
