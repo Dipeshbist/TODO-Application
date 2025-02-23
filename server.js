@@ -21,7 +21,7 @@ app.use(logRequest);
 
 // Import Routes
 const taskRoutes = require("./routes/taskRoutes");
-const userRoutes = require("./routes/userRoutes"); // FIXED: Import user routes
+const userRoutes = require("./routes/userRoutes"); 
 
 // Root Route
 app.get("/", (req, res) => {
