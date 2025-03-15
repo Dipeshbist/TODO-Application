@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Compiles to ES6 JavaScript
+    "module": "CommonJS", // Uses CommonJS module system (Node.js default)
+    "rootDir": "./src", // Source code location
+    "outDir": "./dist", // Output directory for compiled JS files
+    "moduleResolution": "node", // Resolves modules similar to Node.js
+    "strict": true, // Enables strict type-checking
+    "esModuleInterop": true, // Allows default import of CommonJS modules
+    "forceConsistentCasingInFileNames": true, // Prevents issues with filename casing
+    "skipLibCheck": true, // Speeds up compilation by skipping library checks
+    "resolveJsonModule": true, // Allows importing JSON files
+    "lib": ["ES6", "DOM"], // Supports ES6 and browser DOM features
+    "noImplicitAny": true, // Ensures explicit typing
+    "strictNullChecks": true // Prevents null-related errors
+  },
+  "include": ["src"], // Includes all TypeScript files in "src"
+  "exclude": ["node_modules", "dist"] // Excludes compiled files and dependencies
+}

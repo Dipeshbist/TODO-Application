@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 const { registerUser, loginUser } = require("../controllers/userController");
 
 const router = express.Router();
@@ -9,4 +9,4 @@ router.post("/register", registerUser);
 // Login Route
 router.post("/login", loginUser);
 
-module.exports = router;
+export default router;
